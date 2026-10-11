@@ -10,53 +10,77 @@ Uma galeria de gráficos estatísticos em Python. Cada um responde a uma pergunt
 
 ## Índice
 
-| # | Gráfico | Pergunta |
-|---|---|---|
-| 01 | [Raincloud](#01-raincloud) | Quanto tempo leva uma entrega da Olist em cada região do país? |
-| 02 | [Ridgeline](#02-ridgeline) | Como o preço da diária do Airbnb varia entre os bairros de Buenos Aires? |
-| 03 | [Beeswarm](#03-beeswarm) | Clientes que cancelaram pagavam mensalidades diferentes dos que ficaram? |
-| 04 | [Distribuição acumulada (ECDF)](#04-distribuicao-acumulada-ecdf) | Em quantos dias a Olist consegue entregar 90% dos pedidos em cada região? |
-| 05 | [Gráfico Q-Q](#05-grafico-q-q) | O valor dos pedidos segue uma distribuição normal? E o logaritmo do valor? |
-| 06 | [Violino](#06-violino) | Há quanto tempo estão na operadora os clientes de cada tipo de contrato? |
-| 07 | [Histograma e a escolha de bins](#07-histograma-e-a-escolha-de-bins) | Qual é a forma da distribuição dos preços do Airbnb, e quanto a escolha dos intervalos interfere? |
-| 08 | [Dumbbell](#08-dumbbell) | Em cada estado, quanto o prazo prometido pela Olist difere do prazo real de entrega? |
-| 09 | [Lollipop divergente](#09-lollipop-divergente) | Quais categorias têm nota acima ou abaixo da média da loja? |
-| 10 | [Slope chart](#10-slope-chart) | A participação de cada região nos pedidos mudou entre 2017 e 2018? |
-| 11 | [Bump chart](#11-bump-chart) | Como mudou, trimestre a trimestre, o ranking das categorias que mais faturam? |
-| 12 | [Pequenos múltiplos](#12-pequenos-multiplos) | Quais gêneros de filme ganharam e perderam espaço nas avaliações publicadas no Twitter? |
-| 13 | [Barras divergentes (Likert)](#13-barras-divergentes-likert) | Como se distribuem as notas de 1 a 5 em cada categoria, e onde estão as insatisfeitas? |
-| 14 | [Treemap](#14-treemap) | Como o faturamento da Olist se divide entre as categorias de produto? |
-| 15 | [Waffle](#15-waffle) | Como os clientes pagam os pedidos da Olist? |
-| 16 | [Marimekko](#16-marimekko) | A forma de pagamento muda entre as regiões, levando em conta o tamanho de cada região? |
-| 17 | [Área empilhada 100%](#17-area-empilhada-100) | A mistura de formas de pagamento mudou ao longo de 2017 e 2018? |
-| 18 | [UpSet](#18-upset) | Quais combinações de serviços extras os clientes de internet contratam, e quais cancelam menos? |
-| 19 | [Sankey](#19-sankey) | De que região saem os pedidos da Olist e para que região eles vão? |
-| 20 | [Alluvial](#20-alluvial) | Por quais combinações de contrato e internet passam os clientes que cancelam? |
-| 21 | [Funil](#21-funil) | Em qual etapa, da compra à avaliação nota 5, a Olist perde mais pedidos? |
-| 22 | [Diagrama de cordas](#22-diagrama-de-cordas) | Entre os maiores estados, quem vende para quem? |
-| 23 | [Hexbin](#23-hexbin) | Quanto o frete pesa em relação ao valor do produto, pedido a pedido? |
-| 24 | [Matriz de correlação agrupada](#24-matriz-de-correlacao-agrupada) | Quais características dos clientes andam juntas, e quais andam com o cancelamento? |
-| 25 | [Coordenadas paralelas](#25-coordenadas-paralelas) | Qual é o perfil, em várias medidas ao mesmo tempo, dos clientes que cancelam? |
-| 26 | [Rede de coocorrência](#26-rede-de-coocorrencia) | Quais gêneros de filme costumam aparecer juntos? |
-| 27 | [Mapa de hexágonos](#27-mapa-de-hexagonos) | Onde ficam os anúncios mais caros do Airbnb em Buenos Aires? |
-| 28 | [Bolhas](#28-bolhas) | Estados com entrega mais demorada dão notas mais baixas? |
-| 29 | [Heatmap de calendário](#29-heatmap-de-calendario) | Em quais dias de 2017 a Olist vendeu mais? |
-| 30 | [Streamgraph](#30-streamgraph) | Como o volume de avaliações de cada gênero evoluiu de 2013 a 2021? |
-| 31 | [Horizon chart](#31-horizon-chart) | Quando cada região vendeu acima ou abaixo do seu próprio ritmo normal? |
-| 32 | [Fan chart (leque de incerteza)](#32-fan-chart-leque-de-incerteza) | Quantos pedidos esperar nas próximas 12 semanas, e com quanta incerteza? |
-| 33 | [Decomposição de série temporal](#33-decomposicao-de-serie-temporal) | Quanto da variação diária das vendas é tendência, quanto é dia da semana e quanto é imprevisível? |
-| 34 | [Heatmap radial (relógio)](#34-heatmap-radial-relogio) | Em que horas e dias da semana os clientes compram? |
-| 35 | [Nuvem de palavras](#35-nuvem-de-palavras) | Que palavras os clientes insatisfeitos mais usam? |
-| 36 | [Log-odds de palavras](#36-log-odds-de-palavras) | Quais palavras são típicas de avaliações negativas, e não só frequentes? |
-| 37 | [Forest plot](#37-forest-plot) | Quais características aumentam ou reduzem a chance de cancelar, descontando as outras? |
-| 38 | [Distribuição de bootstrap](#38-distribuicao-de-bootstrap) | Quanto um imóvel inteiro custa a mais que um quarto privativo, e com que precisão sabemos isso? |
-| 39 | [Funnel plot](#39-funnel-plot) | Quais vendedores atrasam mais do que o acaso explicaria, dado o seu volume? |
-| 40 | [Lei de Benford](#40-lei-de-benford) | Os valores pagos na Olist seguem a Lei de Benford, como se espera de dados financeiros não manipulados? |
-| 41 | [Diagnóstico de resíduos](#41-diagnostico-de-residuos) | Uma regressão linear para o preço do Airbnb cumpre as suposições que dão validade aos intervalos de confiança? |
-| 42 | [Cobertura de intervalos de confiança](#42-cobertura-de-intervalos-de-confianca) | Se repetíssemos uma pesquisa 100 vezes, quantos intervalos de 95% conteriam o valor verdadeiro? |
-| 43 | [Pizza × barras](#43-pizza--barras) | Qual a participação de cada categoria nos pedidos, e qual gráfico responde isso melhor? |
-| 44 | [Eixo duplo × índice](#44-eixo-duplo--indice) | Pedidos e ticket médio cresceram juntos? |
-| 45 | [Eixo truncado](#45-eixo-truncado) | A nota média muda muito entre as regiões? |
+**Distribuição**
+
+- 01 [Raincloud](#01-raincloud): Quanto tempo leva uma entrega da Olist em cada região do país?
+- 02 [Ridgeline](#02-ridgeline): Como o preço da diária do Airbnb varia entre os bairros de Buenos Aires?
+- 03 [Beeswarm](#03-beeswarm): Clientes que cancelaram pagavam mensalidades diferentes dos que ficaram?
+- 04 [Distribuição acumulada (ECDF)](#04-distribuicao-acumulada-ecdf): Em quantos dias a Olist consegue entregar 90% dos pedidos em cada região?
+- 05 [Gráfico Q-Q](#05-grafico-q-q): O valor dos pedidos segue uma distribuição normal? E o logaritmo do valor?
+- 06 [Violino](#06-violino): Há quanto tempo estão na operadora os clientes de cada tipo de contrato?
+- 07 [Histograma e a escolha de bins](#07-histograma-e-a-escolha-de-bins): Qual é a forma da distribuição dos preços do Airbnb, e quanto a escolha dos intervalos interfere?
+
+**Comparação**
+
+- 08 [Dumbbell](#08-dumbbell): Em cada estado, quanto o prazo prometido pela Olist difere do prazo real de entrega?
+- 09 [Lollipop divergente](#09-lollipop-divergente): Quais categorias têm nota acima ou abaixo da média da loja?
+- 10 [Slope chart](#10-slope-chart): A participação de cada região nos pedidos mudou entre 2017 e 2018?
+- 11 [Bump chart](#11-bump-chart): Como mudou, trimestre a trimestre, o ranking das categorias que mais faturam?
+- 12 [Pequenos múltiplos](#12-pequenos-multiplos): Quais gêneros de filme ganharam e perderam espaço nas avaliações publicadas no Twitter?
+- 13 [Barras divergentes (Likert)](#13-barras-divergentes-likert): Como se distribuem as notas de 1 a 5 em cada categoria, e onde estão as insatisfeitas?
+
+**Composição**
+
+- 14 [Treemap](#14-treemap): Como o faturamento da Olist se divide entre as categorias de produto?
+- 15 [Waffle](#15-waffle): Como os clientes pagam os pedidos da Olist?
+- 16 [Marimekko](#16-marimekko): A forma de pagamento muda entre as regiões, levando em conta o tamanho de cada região?
+- 17 [Área empilhada 100%](#17-area-empilhada-100): A mistura de formas de pagamento mudou ao longo de 2017 e 2018?
+- 18 [UpSet](#18-upset): Quais combinações de serviços extras os clientes de internet contratam, e quais cancelam menos?
+
+**Fluxo**
+
+- 19 [Sankey](#19-sankey): De que região saem os pedidos da Olist e para que região eles vão?
+- 20 [Alluvial](#20-alluvial): Por quais combinações de contrato e internet passam os clientes que cancelam?
+- 21 [Funil](#21-funil): Em qual etapa, da compra à avaliação nota 5, a Olist perde mais pedidos?
+- 22 [Diagrama de cordas](#22-diagrama-de-cordas): Entre os maiores estados, quem vende para quem?
+
+**Relação**
+
+- 23 [Hexbin](#23-hexbin): Quanto o frete pesa em relação ao valor do produto, pedido a pedido?
+- 24 [Matriz de correlação agrupada](#24-matriz-de-correlacao-agrupada): Quais características dos clientes andam juntas, e quais andam com o cancelamento?
+- 25 [Coordenadas paralelas](#25-coordenadas-paralelas): Qual é o perfil, em várias medidas ao mesmo tempo, dos clientes que cancelam?
+- 26 [Rede de coocorrência](#26-rede-de-coocorrencia): Quais gêneros de filme costumam aparecer juntos?
+- 27 [Mapa de hexágonos](#27-mapa-de-hexagonos): Onde ficam os anúncios mais caros do Airbnb em Buenos Aires?
+- 28 [Bolhas](#28-bolhas): Estados com entrega mais demorada dão notas mais baixas?
+
+**Tempo**
+
+- 29 [Heatmap de calendário](#29-heatmap-de-calendario): Em quais dias de 2017 a Olist vendeu mais?
+- 30 [Streamgraph](#30-streamgraph): Como o volume de avaliações de cada gênero evoluiu de 2013 a 2021?
+- 31 [Horizon chart](#31-horizon-chart): Quando cada região vendeu acima ou abaixo do seu próprio ritmo normal?
+- 32 [Fan chart (leque de incerteza)](#32-fan-chart-leque-de-incerteza): Quantos pedidos esperar nas próximas 12 semanas, e com quanta incerteza?
+- 33 [Decomposição de série temporal](#33-decomposicao-de-serie-temporal): Quanto da variação diária das vendas é tendência, quanto é dia da semana e quanto é imprevisível?
+- 34 [Heatmap radial (relógio)](#34-heatmap-radial-relogio): Em que horas e dias da semana os clientes compram?
+
+**Texto**
+
+- 35 [Nuvem de palavras](#35-nuvem-de-palavras): Que palavras os clientes insatisfeitos mais usam?
+- 36 [Log-odds de palavras](#36-log-odds-de-palavras): Quais palavras são típicas de avaliações negativas, e não só frequentes?
+
+**Incerteza**
+
+- 37 [Forest plot](#37-forest-plot): Quais características aumentam ou reduzem a chance de cancelar, descontando as outras?
+- 38 [Distribuição de bootstrap](#38-distribuicao-de-bootstrap): Quanto um imóvel inteiro custa a mais que um quarto privativo, e com que precisão sabemos isso?
+- 39 [Funnel plot](#39-funnel-plot): Quais vendedores atrasam mais do que o acaso explicaria, dado o seu volume?
+- 40 [Lei de Benford](#40-lei-de-benford): Os valores pagos na Olist seguem a Lei de Benford, como se espera de dados financeiros não manipulados?
+- 41 [Diagnóstico de resíduos](#41-diagnostico-de-residuos): Uma regressão linear para o preço do Airbnb cumpre as suposições que dão validade aos intervalos de confiança?
+- 42 [Cobertura de intervalos de confiança](#42-cobertura-de-intervalos-de-confianca): Se repetíssemos uma pesquisa 100 vezes, quantos intervalos de 95% conteriam o valor verdadeiro?
+
+**Errado × certo**
+
+- 43 [Pizza × barras](#43-pizza--barras): Qual a participação de cada categoria nos pedidos, e qual gráfico responde isso melhor?
+- 44 [Eixo duplo × índice](#44-eixo-duplo--indice): Pedidos e ticket médio cresceram juntos?
+- 45 [Eixo truncado](#45-eixo-truncado): A nota média muda muito entre as regiões?
 
 ## Distribuição
 
@@ -646,8 +670,10 @@ Uma galeria de gráficos estatísticos em Python. Cada um responde a uma pergunt
 
 ```bash
 pip install -r requirements.txt
-python scripts/gerar_galeria.py        # gera os 45 gráficos e este README
-python graficos/19_sankey.py           # ou um gráfico só
+# gera os 45 gráficos e este README
+python scripts/gerar_galeria.py
+# ou um gráfico só
+python graficos/19_sankey.py
 ```
 
 Estrutura: `graficos/` (um script por gráfico + `comum.py` com estilo, dados e utilidades) · `dados/` (bases enxutas, geradas por `scripts/preparar_dados.py`) · `figuras/`.

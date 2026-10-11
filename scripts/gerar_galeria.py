@@ -74,17 +74,16 @@ def escrever_readme(itens):
         "- um padrão visual único: paleta validada para daltonismo, título com a conclusão, subtítulo com o que foi medido e fonte no rodapé.",
         "",
         "## Índice",
-        "",
-        "| # | Gráfico | Pergunta |",
-        "|---|---|---|",
     ]
     por_grupo = {}
     for arq, meta, leitura in itens:
         por_grupo.setdefault(meta["grupo"], []).append((arq, meta, leitura))
+    # Índice em lista (e não em tabela) para ficar legível no celular
     for grupo in ORDEM_GRUPOS:
+        linhas += ["", f"**{grupo}**", ""]
         for arq, meta, _ in por_grupo.get(grupo, []):
             n = arq.stem[:2]
-            linhas.append(f"| {n} | [{meta['nome']}](#{ancora(n + '-' + meta['nome'])}) | {meta['pergunta']} |")
+            linhas.append(f"- {n} [{meta['nome']}](#{ancora(n + '-' + meta['nome'])}): {meta['pergunta']}")
     for grupo in ORDEM_GRUPOS:
         linhas += ["", f"## {grupo}", "", f"*{INTRO_GRUPO[grupo]}*", ""]
         for arq, meta, leitura in por_grupo.get(grupo, []):
@@ -108,8 +107,10 @@ def escrever_readme(itens):
         "",
         "```bash",
         "pip install -r requirements.txt",
-        "python scripts/gerar_galeria.py        # gera os 45 gráficos e este README",
-        "python graficos/19_sankey.py           # ou um gráfico só",
+        "# gera os 45 gráficos e este README",
+        "python scripts/gerar_galeria.py",
+        "# ou um gráfico só",
+        "python graficos/19_sankey.py",
         "```",
         "",
         "Estrutura: `graficos/` (um script por gráfico + `comum.py` com estilo, dados e utilidades) · `dados/` (bases enxutas, "
